@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+<html manifest="https://main.streamanalytics.ext.azure.com/?feature.appcache=true&amp;l=ja.ja">
+<head>
+    <title>Stream Analytics Extension</title>
+    
+<meta charset='utf-8' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<meta name='msapplication-config' content='none' />
+<link rel='icon' type='image/x-icon' href='/favicon.ico' />
+<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+<meta name='robots' content='noindex, nofollow' />
+
+</head>
+<body>
+    <script>/// <reference path="../Definitions/FxEnvironment.d.ts" />
+/* tslint:disable:no-unused-expression */
+(function (input) {
+    "use strict";
+    var global = window;
+    var fx = global.fx;
+    if (!fx) {
+        global.fx = fx = {};
+    }
+    var env = fx.environment;
+    if (typeof input === "string") {
+        input = JSON.parse(input);
+    }
+    if (!env) {
+        env = fx.environment = input;
+    }
+    else {
+        Object.keys(input).forEach(function (prop) {
+            if (env[prop] === undefined) {
+                env[prop] = input[prop];
+            }
+        });
+    }
+    // inject session id from the hash if it wasn't already defined
+    if (!env.sessionId) {
+        var hash = global.location.hash || "";
+        var qIndex = hash.indexOf("?");
+        if (qIndex === -1) {
+            qIndex = hash.length;
+        }
+        env.sessionId = hash.substring(1, qIndex);
+    }
+})({"pageVersion":"1.17.0630.2","sdkVersion":"5.0.302.777 (production_sdk#2594372.170605-1532)","version":"1.17.0630.2","applicationPath":"/","bootMessageSignature":"###BOOT###","bootGetConst":"BOOTgetScripts;","bootReturnConst":"BOOTreturn;","cdn":{"disableParameter":"nocdn","enabled":true,"errorPageUri":"","forceDisable":false,"index":-1,"indexParameter":"cdnIndex","forceIndex":null,"bundling":"Default"},"clientTraceUri":"/api/ClientLogs/Post","contentLocations":"None","contentUriBasePath":"/","contentVersionToken":"1.17.0630.2","effectiveLocale":"ja.ja","errorPageUri":"/Error","extensionFlags":{"microsoft_azure_streamanalytics_autoimportendpoint":"true","microsoft_azure_streamanalytics_iothub":"true","microsoft_azure_streamanalytics_servicebus":"true","microsoft_azure_streamanalytics_azurestorage":"true","microsoft_azure_streamanalytics_sqldatabase":"true","microsoft_azure_streamanalytics_documentdatabase":"true","microsoft_azure_streamanalytics_powerbi":"true","microsoft_azure_streamanalytics_functions":"true","microsoft_azure_streamanalytics_iothubendpointselection":"true","microsoft_azure_streamanalytics_enablepowerbioutput":"true","microsoft_azure_streamanalytics_datalake":"true","microsoft_azure_streamanalytics_mlfunctionsautoimport":"true","microsoft_azure_streamanalytics_createexternalresources":"true","microsoft_azure_streamanalytics_troubleshootingblade":"true","microsoft_azure_streamanalytics_mdmmetrics":"true","microsoft_azure_streamanalytics_shoeboxv2":"true","microsoft_azure_streamanalytics_javascriptfunctions":"true","microsoft_azure_streamanalytics_mlfunctions":"true","microsoft_azure_streamanalytics_metricsandpartitions":"true","microsoft_azure_streamanalytics_resourcehealth":"true","microsoft_azure_streamanalytics_diagramv2":"true"},"features":{"autoimportendpoint":"true","iothub":"true","servicebus":"true","azurestorage":"true","sqldatabase":"true","documentdatabase":"true","powerbi":"true","functions":"true","iothubendpointselection":"true","enablepowerbioutput":"true","datalake":"true","mlfunctionsautoimport":"true","createexternalresources":"true","troubleshootingblade":"true","mdmmetrics":"true","shoeboxv2":"true","javascriptfunctions":"true","mlfunctions":"true","metricsandpartitions":"true","resourcehealth":"true","diagramv2":"true"},"query":{"region":"japaneast","cacheVersion":"0","defaultCloudName":"azure","extensionName":"Microsoft_Azure_StreamAnalytics","traceStr":"","sessionId":"aa6b8d16dd354158a668aa15fe7288a6","pageVersion":"1.17.0630.2","l":"ja.ja","trustedAuthority":"portal.azure.com","microsoft_azure_streamanalytics_autoimportendpoint":"true","microsoft_azure_streamanalytics_iothub":"true","microsoft_azure_streamanalytics_servicebus":"true","microsoft_azure_streamanalytics_azurestorage":"true","microsoft_azure_streamanalytics_sqldatabase":"true","microsoft_azure_streamanalytics_documentdatabase":"true","microsoft_azure_streamanalytics_powerbi":"true","microsoft_azure_streamanalytics_functions":"true","microsoft_azure_streamanalytics_iothubendpointselection":"true","microsoft_azure_streamanalytics_enablepowerbioutput":"true","microsoft_azure_streamanalytics_datalake":"true","microsoft_azure_streamanalytics_mlfunctionsautoimport":"true","microsoft_azure_streamanalytics_createexternalresources":"true","microsoft_azure_streamanalytics_troubleshootingblade":"true","microsoft_azure_streamanalytics_mdmmetrics":"true","microsoft_azure_streamanalytics_shoeboxv2":"true","microsoft_azure_streamanalytics_javascriptfunctions":"true","microsoft_azure_streamanalytics_mlfunctions":"true","microsoft_azure_streamanalytics_metricsandpartitions":"true","microsoft_azure_streamanalytics_resourcehealth":"true","microsoft_azure_streamanalytics_diagramv2":"true"},"isDevelopmentMode":false,"isRtl":false,"telemetryUri":"/api/Telemetry","trustedParentOrigin":"https://portal.azure.com","userTypeHint":"","versionedContentRoots":["/content","/scripts"],"crossOriginTraces":true,"requireConfig":{"baseUrl":"/Content/1.17.0630.2/min/Scripts","waitSeconds":30.0,"deps":["_generated/Manifest"],"bundles":{"*StreamAnalytics.IbizaExtension":["ClientResources"],"*_generated/Manifest":["_generated/Manifest"]},"shim":{"_generated/Manifest":["**Shim_//main.streamanalytics.ext.azure.com/Content/Dynamic/TypeMetadataScript_81BECAC09DCCF61C101A9B9AE9081576AE699395"]},"paths":{"**Shim_//main.streamanalytics.ext.azure.com/Content/Dynamic/TypeMetadataScript_81BECAC09DCCF61C101A9B9AE9081576AE699395":["//main.streamanalytics.ext.azure.com/Content/Dynamic/TypeMetadataScript_81BECAC09DCCF61C101A9B9AE9081576AE699395"],"*StreamAnalytics.IbizaExtension":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdResourceDefinition_8AF187352AC42D27DFE78D913539F68E40BE6984.js?c1=ja\u0026root=StreamAnalytics.IbizaExtension"],"**_generated/Parts/StreamAnalyticsJobPart":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_BACB924B93DE23AAA0ED81D4640CF2688F1DCFB2.js?root=**_generated/Parts/StreamAnalyticsJobPart"],"*_generated/Parts/StreamAnalyticsJobPart":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_8A2CBE29BF851F2E8A7EF8F4A9A906B8BBB8EA8C.js?root=*_generated/Parts/StreamAnalyticsJobPart"],"*_generated/NotificationsManifest":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_B884DEE6EFD29ABC53E3115D242EEA7DF92996C1.js?root=*_generated/NotificationsManifest"],"*_generated/Manifest":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_6CC0A4B9C0725B49FEF25D1343D2348734058BE4.js?root=*_generated/Manifest\u0026emitMap=0"],"*_generated/HubsExtension/BladeReferences":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_30FE689AEFFDCF16E7F7E78ABA67845027C34329.js?root=*_generated/HubsExtension/BladeReferences"],"*_generated/GalleryPartsManifest":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2951D158714BBE3BDF3BED648DD3E253DD9B501D.js?root=*_generated/GalleryPartsManifest"],"*_generated/BladesManifest":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2367A91A359884D43CE9542E33455E8E874E12F3.js?root=*_generated/BladesManifest"],"**_generated/Blades/UploadSampleDataFromInputBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DBFF9EB77D4D84B39C790BEF31319F13B788F80D.js?root=**_generated/Blades/UploadSampleDataFromInputBlade"],"*_generated/Blades/UploadSampleDataFromInputBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_C3CB37CF09BB0F9458AEAEA453ADEDCCA8239BD6.js?root=*_generated/Blades/UploadSampleDataFromInputBlade"],"*_generated/Blades/ToolsTemplateBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_8D33400397B52DB74093FF4ACC33F3EEA510DC95.js?root=*_generated/Blades/ToolsTemplateBlade"],"**_generated/Blades/StartBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_AEE095525AA657BE233F634EF432DD7666C2AF3D.js?root=**_generated/Blades/StartBlade"],"*_generated/Blades/StartBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_0098FAA2FF6D5344AC6A05E47E41D57A89ABD64A.js?root=*_generated/Blades/StartBlade"],"**_generated/Blades/SkuSpecPickerV3":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_D2DA737EDF22989D4737580FD0C7D92EB3A08F1F.js?root=**_generated/Blades/SkuSpecPickerV3"],"*_generated/Blades/SkuSpecPickerV3":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2AA975242945F263D53A437C039143E561EF5A3D.js?root=*_generated/Blades/SkuSpecPickerV3"],"**_generated/Blades/SingleOutputBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_B2E35C2235011D18C5228AC818B32AC6F6BDEE46.js?root=**_generated/Blades/SingleOutputBlade"],"*_generated/Blades/SingleOutputBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_CF3C4165280AC06FD00A71401F2540D360B9B7B2.js?root=*_generated/Blades/SingleOutputBlade"],"**_generated/Blades/SingleInputBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_55F268C6109B5F7925C052511E1AE4EB8ECFAE52.js?root=**_generated/Blades/SingleInputBlade"],"*_generated/Blades/SingleInputBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_34413FD284DACA53D6329D46BC6B1DBF3EA6EE04.js?root=*_generated/Blades/SingleInputBlade"],"**_generated/Blades/SingleFunctionBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_931E7D3F8F0AD199C8E3373F3372FF1636ED73CD.js?root=**_generated/Blades/SingleFunctionBlade"],"*_generated/Blades/SingleFunctionBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_85C52EDE0242177B422DC55BFECCE55F5442326C.js?root=*_generated/Blades/SingleFunctionBlade"],"*_generated/Blades/ScaleBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_1D6D3D26B0854F1E1684E3CDD329E060A210C981.js?root=*_generated/Blades/ScaleBlade"],"*_generated/Blades/SampleInputBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_38CC8503C2880F14746B36549C52F4E855DD1A74.js?root=*_generated/Blades/SampleInputBlade"],"*_generated/Blades/QuickStartBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_F0DB2F09CD29B57FF339A41EC9E390C6DE27F3D7.js?root=*_generated/Blades/QuickStartBlade"],"*_generated/Blades/QueryInputDataBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_4120004C8AA34B4892A57AB67EF0D39FB955C696.js?root=*_generated/Blades/QueryInputDataBlade"],"**_generated/Blades/QueryBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_984C3C687E2176CDC686F71CB16802A4254D38F1.js?root=**_generated/Blades/QueryBlade"],"*_generated/Blades/QueryBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_E11A3541BCD7BB4736901C11E146E252BCFC1FB9.js?root=*_generated/Blades/QueryBlade"],"*_generated/Blades/PropertiesBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_BF3D870F13AAEDC71C91349BDF4C765031C8A97B.js?root=*_generated/Blades/PropertiesBlade"],"**_generated/Blades/OutputsBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_754F8A6DCB662A7B4D09BD4D4E15A8564490197B.js?root=**_generated/Blades/OutputsBlade"],"*_generated/Blades/OutputsBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_BAFFF2CC40FCE1FB8A069189613ECEAC10BD73CD.js?root=*_generated/Blades/OutputsBlade"],"*_generated/Blades/LocaleBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_1BEB1E95491D9A0DFDE6F8AA34B75EBBBF392333.js?root=*_generated/Blades/LocaleBlade"],"*_generated/Blades/JobDashboardBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_EE26E1C99EF1133FEE74F9F9B4922370C15160D7.js?root=*_generated/Blades/JobDashboardBlade"],"*_generated/Blades/InputsListBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_205224606D7A28400A8D14DF8A29C65692666E9A.js?root=*_generated/Blades/InputsListBlade"],"*_generated/Blades/InputsBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_A796D9313CB66F21195AFE128C8529C169438144.js?root=*_generated/Blades/InputsBlade"],"*_generated/Blades/FunctionsBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_CD0B6FA34F83E949D4D29BD32B4D1994BA3F8782.js?root=*_generated/Blades/FunctionsBlade"],"*_generated/Blades/EventsOutOfOrderPolicyBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2F7D6D29FB2B496BC8DFABB832C5CC9296EFD9EB.js?root=*_generated/Blades/EventsOutOfOrderPolicyBlade"],"*_generated/Blades/ErrorPolicyBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_EBEB530D0730A221972646073F61033D62C55F91.js?root=*_generated/Blades/ErrorPolicyBlade"],"*_generated/Blades/DownloadSampledInputsBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_D703FF90E4446F341E9C374707F378C61D2F1EBD.js?root=*_generated/Blades/DownloadSampledInputsBlade"],"*_generated/Blades/DownloadBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_0233765CE1DBC8EB555D0B387BB2A40F2407C037.js?root=*_generated/Blades/DownloadBlade"],"*_generated/Blades/DiagramBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_FEAD5680FB167DE2A7096A213FC6CF0349CD3832.js?root=*_generated/Blades/DiagramBlade"],"*_generated/Blades/Diagram2Blade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2032265CC8A7A47BFD33C9AB70124C6B9AF6B6A6.js?root=*_generated/Blades/Diagram2Blade"],"**_generated/Blades/Diagram2Blade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_60EFDE5AB0D5864064F204CB7B59446717301D34.js?root=**_generated/Blades/Diagram2Blade"],"*_generated/Blades/DeviceBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_CC2EE0517C4E7111970D4FD17BDDDA72D24249D6.js?root=*_generated/Blades/DeviceBlade"],"*_generated/Blades/CreateStreamingJobBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_3CDFB76D9C35C7282F6D0826C9D55F8CBA305B6A.js?root=*_generated/Blades/CreateStreamingJobBlade"],"*_generated/Blades/CompatibilityBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_FAB4A6879684D867D41CBB24D7A4BBFE2A8F8EEB.js?root=*_generated/Blades/CompatibilityBlade"],"*_generated/Blades/AddOutputBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_79329E8794F8FEA78DBDBDA9AF4EB165DD69026D.js?root=*_generated/Blades/AddOutputBlade"],"*_generated/Blades/AddInputBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_0D932BD55A654ED636FA7DFFF9C02A5F94D0B01C.js?root=*_generated/Blades/AddInputBlade"],"*_generated/Blades/AddFunctionBlade":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_0887F19ADBCA41B2398038AF29ED66B0389FDE9C.js?root=*_generated/Blades/AddFunctionBlade"],"*_generated/AssetTypesManifest":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_B169F478D1BFBE8CFB36A9CBA3F1DFE2F6F3EC06.js?root=*_generated/AssetTypesManifest"],"*Shared/SharedArea":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_52EA62008D57AA491770BACBE69EFD9E94CE0D7C.js?root=*Shared/SharedArea"],"*Shared/Controllers/External/StorageController":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_27FB5A7F601FB9C533B191DF7A49A5A43FDE889F.js?root=*Shared/Controllers/External/StorageController"],"*Shared/Assets/ViewModels/StreamingJobResourceTypeViewModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_6A2CC8C09E9332B9142A227138D55796FFA4B9F0.js?root=*Shared/Assets/ViewModels/StreamingJobResourceTypeViewModel"],"*Shared/Assets/ViewModels/StreamingJobResourceTypeMappingViewModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_4260F899087471C52D021C32087DD4729A46F565.js?root=*Shared/Assets/ViewModels/StreamingJobResourceTypeMappingViewModel"],"*Settings/SettingsArea":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_616930696F1A9EAD15E346B2B1F028E6F25AE141.js?root=*Settings/SettingsArea"],"*Settings/Scale/Interfaces/IScaleFormEditScopeCacheModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_A297AF778A732A20908EA4BD05A6DF15ED9F9E4B.js?root=*Settings/Scale/Interfaces/IScaleFormEditScopeCacheModel"],"*Settings/Locale/Interfaces/ILocaleFormEditScopeCacheModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_1B568E3FC73489778D90CCCCAD5654CFCE002BB1.js?root=*Settings/Locale/Interfaces/ILocaleFormEditScopeCacheModel"],"*Settings/EventsOutOfOrderPolicy/Interfaces/IEventsOutOfOrderPolicyFormEditScopeCacheModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_A7139F03E3E8BFDDAFE34A2233EF5798974CD24D.js?root=*Settings/EventsOutOfOrderPolicy/Interfaces/IEventsOutOfOrderPolicyFormEditScopeCacheModel"],"*Settings/ErrorPolicy/Interfaces/IErrorPolicyFormEditScopeCacheModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DD24D012069116017CE78393B6E8E524C096A7FE.js?root=*Settings/ErrorPolicy/Interfaces/IErrorPolicyFormEditScopeCacheModel"],"*Query/Editor/ViewModels/UploadSampleDataCommandViewModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_D13D02991EB7B598DD9C2E5F33A1710EB56F779C.js?root=*Query/Editor/ViewModels/UploadSampleDataCommandViewModel"],"*Query/Editor/Interfaces/IQueryInputDataModels":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DE1BD84C0F41FA3724376C3BAAA86A1C2DED9308.js?root=*Query/Editor/Interfaces/IQueryInputDataModels"],"*Query/Editor/Interfaces/IQueryEditScopeCacheModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_5589E5F20F3064B5D2A26976AB1E35A0DEED6652.js?root=*Query/Editor/Interfaces/IQueryEditScopeCacheModel"],"*Program":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_4AF88CAFB7A1B72B60AEFD69F8E7E043C138AD98.js?root=*Program"],"*EndpointsV2/Shared/Interfaces/EndpointGridItem":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_3584D25ADCD0D2315B804C3F201F5E5668D3092C.js?root=*EndpointsV2/Shared/Interfaces/EndpointGridItem"],"*Endpoints/Shared/Interfaces/ISampleInputEditScopeModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_EE048E18CC658CBEA3D232B76474DAD131BC4797.js?root=*Endpoints/Shared/Interfaces/ISampleInputEditScopeModel"],"*Endpoints/Shared/Interfaces/IDocumentDatabaseKeys":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DEB35BD5D3262547CA208A8D10809AF30049B963.js?root=*Endpoints/Shared/Interfaces/IDocumentDatabaseKeys"],"*Endpoints/Shared/Interfaces/IDocumentDatabaseAccount":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2E52B9CEE9C5D397FCB15B08E37119B30B3C392D.js?root=*Endpoints/Shared/Interfaces/IDocumentDatabaseAccount"],"*Endpoints/Functions/Single/ViewModels/TestFunctionCommandViewModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_4EC432902E8FA57C9B87591255C60D4CA136FFB3.js?root=*Endpoints/Functions/Single/ViewModels/TestFunctionCommandViewModel"],"*Endpoints/Functions/Single/ViewModels/RefreshParametersFunctionCommandViewModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_12969E945AAA23CB5565D75A41F6DC6497A20C11.js?root=*Endpoints/Functions/Single/ViewModels/RefreshParametersFunctionCommandViewModel"],"*Endpoints/Functions/Single/ViewModels/DeleteFunctionCommandViewModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_8E5DDEAAE87BC3611FD5E233993978355C00BDD0.js?root=*Endpoints/Functions/Single/ViewModels/DeleteFunctionCommandViewModel"],"*Endpoints/EndpointsArea":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DAA0F4C43F65BE6955203FA76D0234497430F155.js?root=*Endpoints/EndpointsArea"],"*Diagram/Shared/Interfaces/IGraphToShow":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_76580A45B32E75FE41898F893B337F0B891B7B28.js?root=*Diagram/Shared/Interfaces/IGraphToShow"],"*Diagram/Part/ViewModels/DiagramPartViewModel":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_5AE85A64D9CDA80A8344110FEA522C6075C9D918.js?root=*Diagram/Part/ViewModels/DiagramPartViewModel"],"*primaryPartitioning":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_6B5457AA1FCE931868D2BC8813107EB4A97AE916.js?root=*primaryPartitioning"],"*secondaryPartitioning":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_6B5457AA1FCE931868D2BC8813107EB4A97AE916.js?root=*secondaryPartitioning"]}},"fxRequireConfig":{"bundles":{"*StreamAnalytics.IbizaExtension":["ClientResources"],"*_generated/Manifest":["_generated/Manifest"]},"shim":{"_generated/Manifest":["**Shim_//main.streamanalytics.ext.azure.com/Content/Dynamic/TypeMetadataScript_81BECAC09DCCF61C101A9B9AE9081576AE699395"]},"paths":{"**Shim_//main.streamanalytics.ext.azure.com/Content/Dynamic/TypeMetadataScript_81BECAC09DCCF61C101A9B9AE9081576AE699395":["//main.streamanalytics.ext.azure.com/Content/Dynamic/TypeMetadataScript_81BECAC09DCCF61C101A9B9AE9081576AE699395"]}},"prefetchCss":[],"prefetchScripts":["//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdResourceDefinition_8AF187352AC42D27DFE78D913539F68E40BE6984.js?c1=ja\u0026root=StreamAnalytics.IbizaExtension","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_BACB924B93DE23AAA0ED81D4640CF2688F1DCFB2.js?root=**_generated/Parts/StreamAnalyticsJobPart","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_8A2CBE29BF851F2E8A7EF8F4A9A906B8BBB8EA8C.js?root=*_generated/Parts/StreamAnalyticsJobPart","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_B884DEE6EFD29ABC53E3115D242EEA7DF92996C1.js?root=*_generated/NotificationsManifest","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_6CC0A4B9C0725B49FEF25D1343D2348734058BE4.js?root=*_generated/Manifest\u0026emitMap=0","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_30FE689AEFFDCF16E7F7E78ABA67845027C34329.js?root=*_generated/HubsExtension/BladeReferences","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2951D158714BBE3BDF3BED648DD3E253DD9B501D.js?root=*_generated/GalleryPartsManifest","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2367A91A359884D43CE9542E33455E8E874E12F3.js?root=*_generated/BladesManifest","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DBFF9EB77D4D84B39C790BEF31319F13B788F80D.js?root=**_generated/Blades/UploadSampleDataFromInputBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_C3CB37CF09BB0F9458AEAEA453ADEDCCA8239BD6.js?root=*_generated/Blades/UploadSampleDataFromInputBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_8D33400397B52DB74093FF4ACC33F3EEA510DC95.js?root=*_generated/Blades/ToolsTemplateBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_AEE095525AA657BE233F634EF432DD7666C2AF3D.js?root=**_generated/Blades/StartBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_0098FAA2FF6D5344AC6A05E47E41D57A89ABD64A.js?root=*_generated/Blades/StartBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_D2DA737EDF22989D4737580FD0C7D92EB3A08F1F.js?root=**_generated/Blades/SkuSpecPickerV3","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2AA975242945F263D53A437C039143E561EF5A3D.js?root=*_generated/Blades/SkuSpecPickerV3","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_B2E35C2235011D18C5228AC818B32AC6F6BDEE46.js?root=**_generated/Blades/SingleOutputBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_CF3C4165280AC06FD00A71401F2540D360B9B7B2.js?root=*_generated/Blades/SingleOutputBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_55F268C6109B5F7925C052511E1AE4EB8ECFAE52.js?root=**_generated/Blades/SingleInputBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_34413FD284DACA53D6329D46BC6B1DBF3EA6EE04.js?root=*_generated/Blades/SingleInputBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_931E7D3F8F0AD199C8E3373F3372FF1636ED73CD.js?root=**_generated/Blades/SingleFunctionBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_85C52EDE0242177B422DC55BFECCE55F5442326C.js?root=*_generated/Blades/SingleFunctionBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_1D6D3D26B0854F1E1684E3CDD329E060A210C981.js?root=*_generated/Blades/ScaleBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_38CC8503C2880F14746B36549C52F4E855DD1A74.js?root=*_generated/Blades/SampleInputBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_F0DB2F09CD29B57FF339A41EC9E390C6DE27F3D7.js?root=*_generated/Blades/QuickStartBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_4120004C8AA34B4892A57AB67EF0D39FB955C696.js?root=*_generated/Blades/QueryInputDataBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_984C3C687E2176CDC686F71CB16802A4254D38F1.js?root=**_generated/Blades/QueryBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_E11A3541BCD7BB4736901C11E146E252BCFC1FB9.js?root=*_generated/Blades/QueryBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_BF3D870F13AAEDC71C91349BDF4C765031C8A97B.js?root=*_generated/Blades/PropertiesBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_754F8A6DCB662A7B4D09BD4D4E15A8564490197B.js?root=**_generated/Blades/OutputsBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_BAFFF2CC40FCE1FB8A069189613ECEAC10BD73CD.js?root=*_generated/Blades/OutputsBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_1BEB1E95491D9A0DFDE6F8AA34B75EBBBF392333.js?root=*_generated/Blades/LocaleBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_EE26E1C99EF1133FEE74F9F9B4922370C15160D7.js?root=*_generated/Blades/JobDashboardBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_205224606D7A28400A8D14DF8A29C65692666E9A.js?root=*_generated/Blades/InputsListBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_A796D9313CB66F21195AFE128C8529C169438144.js?root=*_generated/Blades/InputsBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_CD0B6FA34F83E949D4D29BD32B4D1994BA3F8782.js?root=*_generated/Blades/FunctionsBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2F7D6D29FB2B496BC8DFABB832C5CC9296EFD9EB.js?root=*_generated/Blades/EventsOutOfOrderPolicyBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_EBEB530D0730A221972646073F61033D62C55F91.js?root=*_generated/Blades/ErrorPolicyBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_D703FF90E4446F341E9C374707F378C61D2F1EBD.js?root=*_generated/Blades/DownloadSampledInputsBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_0233765CE1DBC8EB555D0B387BB2A40F2407C037.js?root=*_generated/Blades/DownloadBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_FEAD5680FB167DE2A7096A213FC6CF0349CD3832.js?root=*_generated/Blades/DiagramBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2032265CC8A7A47BFD33C9AB70124C6B9AF6B6A6.js?root=*_generated/Blades/Diagram2Blade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_60EFDE5AB0D5864064F204CB7B59446717301D34.js?root=**_generated/Blades/Diagram2Blade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_CC2EE0517C4E7111970D4FD17BDDDA72D24249D6.js?root=*_generated/Blades/DeviceBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_3CDFB76D9C35C7282F6D0826C9D55F8CBA305B6A.js?root=*_generated/Blades/CreateStreamingJobBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_FAB4A6879684D867D41CBB24D7A4BBFE2A8F8EEB.js?root=*_generated/Blades/CompatibilityBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_79329E8794F8FEA78DBDBDA9AF4EB165DD69026D.js?root=*_generated/Blades/AddOutputBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_0D932BD55A654ED636FA7DFFF9C02A5F94D0B01C.js?root=*_generated/Blades/AddInputBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_0887F19ADBCA41B2398038AF29ED66B0389FDE9C.js?root=*_generated/Blades/AddFunctionBlade","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_B169F478D1BFBE8CFB36A9CBA3F1DFE2F6F3EC06.js?root=*_generated/AssetTypesManifest","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_52EA62008D57AA491770BACBE69EFD9E94CE0D7C.js?root=*Shared/SharedArea","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_27FB5A7F601FB9C533B191DF7A49A5A43FDE889F.js?root=*Shared/Controllers/External/StorageController","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_6A2CC8C09E9332B9142A227138D55796FFA4B9F0.js?root=*Shared/Assets/ViewModels/StreamingJobResourceTypeViewModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_4260F899087471C52D021C32087DD4729A46F565.js?root=*Shared/Assets/ViewModels/StreamingJobResourceTypeMappingViewModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_616930696F1A9EAD15E346B2B1F028E6F25AE141.js?root=*Settings/SettingsArea","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_A297AF778A732A20908EA4BD05A6DF15ED9F9E4B.js?root=*Settings/Scale/Interfaces/IScaleFormEditScopeCacheModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_1B568E3FC73489778D90CCCCAD5654CFCE002BB1.js?root=*Settings/Locale/Interfaces/ILocaleFormEditScopeCacheModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_A7139F03E3E8BFDDAFE34A2233EF5798974CD24D.js?root=*Settings/EventsOutOfOrderPolicy/Interfaces/IEventsOutOfOrderPolicyFormEditScopeCacheModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DD24D012069116017CE78393B6E8E524C096A7FE.js?root=*Settings/ErrorPolicy/Interfaces/IErrorPolicyFormEditScopeCacheModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_D13D02991EB7B598DD9C2E5F33A1710EB56F779C.js?root=*Query/Editor/ViewModels/UploadSampleDataCommandViewModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DE1BD84C0F41FA3724376C3BAAA86A1C2DED9308.js?root=*Query/Editor/Interfaces/IQueryInputDataModels","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_5589E5F20F3064B5D2A26976AB1E35A0DEED6652.js?root=*Query/Editor/Interfaces/IQueryEditScopeCacheModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_4AF88CAFB7A1B72B60AEFD69F8E7E043C138AD98.js?root=*Program","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_3584D25ADCD0D2315B804C3F201F5E5668D3092C.js?root=*EndpointsV2/Shared/Interfaces/EndpointGridItem","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_EE048E18CC658CBEA3D232B76474DAD131BC4797.js?root=*Endpoints/Shared/Interfaces/ISampleInputEditScopeModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DEB35BD5D3262547CA208A8D10809AF30049B963.js?root=*Endpoints/Shared/Interfaces/IDocumentDatabaseKeys","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_2E52B9CEE9C5D397FCB15B08E37119B30B3C392D.js?root=*Endpoints/Shared/Interfaces/IDocumentDatabaseAccount","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_4EC432902E8FA57C9B87591255C60D4CA136FFB3.js?root=*Endpoints/Functions/Single/ViewModels/TestFunctionCommandViewModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_12969E945AAA23CB5565D75A41F6DC6497A20C11.js?root=*Endpoints/Functions/Single/ViewModels/RefreshParametersFunctionCommandViewModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_8E5DDEAAE87BC3611FD5E233993978355C00BDD0.js?root=*Endpoints/Functions/Single/ViewModels/DeleteFunctionCommandViewModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_DAA0F4C43F65BE6955203FA76D0234497430F155.js?root=*Endpoints/EndpointsArea","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_76580A45B32E75FE41898F893B337F0B891B7B28.js?root=*Diagram/Shared/Interfaces/IGraphToShow","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_5AE85A64D9CDA80A8344110FEA522C6075C9D918.js?root=*Diagram/Part/ViewModels/DiagramPartViewModel","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_6B5457AA1FCE931868D2BC8813107EB4A97AE916.js?root=*primaryPartitioning","//main.streamanalytics.ext.azure.com/Content/Dynamic/AmdBundleDefinition_6B5457AA1FCE931868D2BC8813107EB4A97AE916.js?root=*secondaryPartitioning"],"trace":{},"defaultCacheEvictionDelay":null,"cacheVersion":"0","defaultCloudName":"azure","extensionName":"Microsoft_Azure_StreamAnalytics","traceStr":"","flight":0,"armApiVersion":"2016-06-01","armBaseUri":"https://management.azure.com/","streamAnalyticsRpApiVersion":"2016-03-01","streamAnalyticsEdgeRpApiVersion":"2017-04-01-preview","storageApiVersion":"2015-06-15","storageNamespace":"Microsoft.Storage","classicStorageApiVersion":"2015-12-01","classicStorageNamespace":"Microsoft.ClassicStorage","enablePortalLogging":true,"traceAjaxErrors":true,"useFxArmEndpoint":false,"javascriptObjectPropertiesAreEnumerable":true,"enableFastViewModelProxying":false,"frameworkCapabilities":1});</script>
+<script>/// <reference path="..\..\Framework\TypeScript\Definitions\Html5.d.ts" />
+/// <reference path="..\..\Framework\TypeScript\Definitions\FxEnvironment.d.ts" />
+(function () {
+    "use strict";
+    var global = window;
+    var location = global.location;
+    var fx = global.fx || {};
+    var environment = fx.environment || {};
+    var cdnConfig = environment.cdn || {};
+    var isCdnEnabled = cdnConfig.enabled;
+    var disableCdnQueryStringParameter = cdnConfig.disableParameter;
+    var encodeURIComponentFunc = encodeURIComponent;
+    var cdnFailedIndexKey = "Cdn_FailedIndex";
+    var errorPageUri = cdnConfig.errorPageUri;
+    var emptyString = "";
+    var slashChar = "/";
+    var questionChar = "?";
+    var srcAttribute = "src";
+    global.fx = fx;
+    function getUriWithQueryStringParameter(uri, key, val) {
+        uri = uri || emptyString;
+        var hashPosition = uri.indexOf("#");
+        var uriWithoutHash = uri;
+        var hash = emptyString;
+        if (hashPosition >= 0) {
+            uriWithoutHash = uri.substr(0, hashPosition);
+            hash = uri.substr(hashPosition);
+        }
+        // If the uri is missing a slash after the domain name, we add it
+        if (uriWithoutHash.split(slashChar).length === 3) {
+            uriWithoutHash += slashChar;
+        }
+        key = encodeURIComponentFunc(key);
+        val = encodeURIComponentFunc(val);
+        if (uriWithoutHash) {
+            var kvp = key + "=" + val;
+            var regex = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+            if (uriWithoutHash.match(regex)) {
+                uriWithoutHash = uriWithoutHash.replace(regex, "$1" + kvp + "$2");
+            }
+            else {
+                var separator = uriWithoutHash.indexOf(questionChar) >= 0 ? "&" : questionChar;
+                uriWithoutHash += (separator + kvp);
+            }
+            return uriWithoutHash + hash;
+        }
+    }
+    function disableCdn(qs) {
+        var uri = getUriWithQueryStringParameter(location.href, qs, "true");
+        global.sessionStorage.setItem(cdnFailedIndexKey, String(cdnConfig.index));
+        location.replace(uri);
+    }
+    function navigateToErrorUri(uri, evt) {
+        if (evt) {
+            var attr = evt + emptyString;
+            var target = evt.target;
+            if (target && target.getAttribute) {
+                attr = target.getAttribute(srcAttribute);
+            }
+            uri = getUriWithQueryStringParameter(uri, srcAttribute, attr);
+        }
+        location.href = uri;
+    }
+    function handleError(evt) {
+        if (disableCdnQueryStringParameter && isCdnEnabled) {
+            disableCdn(disableCdnQueryStringParameter);
+        }
+        else if (errorPageUri) {
+            navigateToErrorUri(errorPageUri, evt);
+        }
+    }
+    if (!fx.handleError) {
+        // this function name must match the corresponding string in GuardedContentTagGenerator.cs
+        fx.handleError = handleError;
+    }
+})();</script>
+    <script>/// <reference path="../Definitions/FxEnvironment.d.ts" />
+var MsPortalFx;
+(function (MsPortalFx) {
+    "use strict";
+    var global = window;
+    var document = global.document;
+    var environment = global.fx.environment;
+    var eventMessageConst = "message";
+    var trustedParentOrigin = (environment.trustedParentOrigin || "*").toLowerCase();
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+    // Edge supports setImmediate.
+    // Chrome, Edge, Firefox, Opera, Safari support native promise.
+    // IE11 and Servo fall back to set timeout.
+    var nativePromsie = global.Promise;
+    var resolvedPromise = nativePromsie && nativePromsie.resolve();
+    var promiseNextTick = resolvedPromise && function (func) {
+        resolvedPromise.then(func);
+    };
+    // setImmediate && Native Promise typically have more aggressive task allocation than timeout. IE11 doesn't have either, fall back to settimeout
+    var nextTick = global.setImmediate || promiseNextTick || global.setTimeout;
+    function isOriginAllowed(origin) {
+        return trustedParentOrigin === "*" || origin.toLowerCase() === trustedParentOrigin;
+    }
+    function getRootLevelMessage(obj) {
+        return JSON.stringify(obj, function (key, value) {
+            if (!key ||
+                !(value && typeof value === "object")) {
+                return value;
+            }
+            return; // skip all other data
+        });
+    }
+    function getScriptErrorLogMessage(script, evt) {
+        return "Error loading script: '" + JSON.stringify(script) + "'. Error: " + getRootLevelMessage(evt);
+    }
+    var Boot;
+    (function (Boot) {
+        var currentScript;
+        var bootMessageSignature = environment.bootMessageSignature;
+        var bootScripts = [];
+        function postMessageToParent(kind, data) {
+            var message = {
+                signature: bootMessageSignature,
+                kind: kind,
+                data: data
+            };
+            global.parent.postMessage(message, trustedParentOrigin);
+        }
+        function runScripts() {
+            if (!currentScript && bootScripts.length) {
+                var thisScript = createScriptElement();
+                var doneFunc = function () {
+                    currentScript = null;
+                    thisScript.removeEventListener("error", errorFunc);
+                    thisScript.removeEventListener("load", doneFunc);
+                    nextTick(runScripts);
+                };
+                var errorFunc = function (evt) {
+                    postMessageToParent(2 /* BootError */, {
+                        message: getScriptErrorLogMessage(currentScript, evt)
+                    });
+                    doneFunc();
+                };
+                thisScript.addEventListener("load", doneFunc, false);
+                thisScript.addEventListener("error", errorFunc, false);
+                currentScript = bootScripts.shift();
+                if (currentScript.kind === 1 /* Text */) {
+                    thisScript.text = currentScript.data;
+                }
+                else {
+                    thisScript.src = currentScript.data;
+                    if (MsPortalFx && MsPortalFx.Base && MsPortalFx.Base.Constants && environment.extensionName !== MsPortalFx.Base.Constants.Shell) {
+                        // When clientOptimizations if off, FxImpl method may not have loaded yet
+                        var addScriptErrorListener = FxImpl
+                            && FxImpl.Diagnostics
+                            && FxImpl.Diagnostics.addScriptErrorListener;
+                        if (addScriptErrorListener) {
+                            addScriptErrorListener(2 /* BootError */, thisScript, thisScript.src);
+                        }
+                    }
+                }
+                document.body.appendChild(thisScript);
+            }
+        }
+        function listener(evt) {
+            if (!isOriginAllowed(evt.origin)) {
+                return;
+            }
+            var message = evt.data;
+            if (message && message.signature === bootMessageSignature) {
+                if (message.kind === 1 /* BootReturn */) {
+                    var data = message.data;
+                    if (data.stopListening) {
+                        global.removeEventListener(eventMessageConst, listener);
+                    }
+                    bootScripts = bootScripts.concat(data.scripts);
+                    runScripts();
+                }
+            }
+        }
+        // To obtain any details about an error in a script with a different origin
+        // than the global error handler, that script needs to be loaded with
+        // crossorigin = "anonymous" and its HTTP response needs to include the
+        // header "Access-Control-Allow-Origin: *".
+        // If the header is missing the script will fail loading, hence the environment
+        // flag.
+        // NOTE: Keep in sync with MsPortalFxEnd.ts
+        var crossOriginTracesEnabled = environment.isDevelopmentMode || environment.crossOriginTraces;
+        function createScriptElement() {
+            var thisScript = document.createElement("script");
+            if (crossOriginTracesEnabled) {
+                thisScript.setAttribute("crossorigin", "anonymous");
+            }
+            return thisScript;
+        }
+        Boot.createScriptElement = createScriptElement;
+        global.addEventListener(eventMessageConst, listener, false);
+        postMessageToParent(0 /* BootGet */, {
+            sdkVersion: environment.sdkVersion,
+            extVersion: environment.version
+        });
+    })(Boot = MsPortalFx.Boot || (MsPortalFx.Boot = {}));
+    // BUG: 3194645 Change bootstrap to be one event listener that just picks up a script. Remove old bootstrap logic.
+    // legacy boot code, remove after boot change transition is complete (sprint 4.15)
+    /*interface Window {
+        MsPortalFx: {
+            Base: {
+                Diagnostics: {
+                    Log: {
+                        writeEntry: Function
+                    };
+                    LogEntryLevel: {
+                        Error: string
+                    };
+                };
+            };
+        };
+    }*/
+    /**
+     * Defines the time when scripts need to be loaded in an extension IFrame.
+     * This must match the Microsoft.Portal.Framework.ScriptLoadStage enum.
+     */
+    (function (ScriptLoadStage) {
+        /**
+         * Indicates that the script is required before manifest load.
+         */
+        ScriptLoadStage[ScriptLoadStage["PreManifest"] = 0] = "PreManifest";
+        /**
+         * Indicates that the script is required before extension initialize.
+         */
+        ScriptLoadStage[ScriptLoadStage["PreInitialize"] = 1] = "PreInitialize";
+    })(MsPortalFx.ScriptLoadStage || (MsPortalFx.ScriptLoadStage = {}));
+    var ScriptLoadStage = MsPortalFx.ScriptLoadStage;
+    var bootScripts = [];
+    var preInitExtensionScripts = [];
+    var bootGetConst = "BOOTgetScripts;"; // Const must match ExtensionManager.ts of same name.
+    var bootReturnConst = "BOOTreturn;"; // Const must match ExtensionManager.ts of same name.
+    var logErrorFunc;
+    var consoleFunc;
+    var bufferedLogMessages = [];
+    var hasReceivedScripts;
+    var currentScript = null;
+    var preInitialize = false;
+    var msPortalFx = global.MsPortalFx;
+    if (global.console && global.console.error) {
+        consoleFunc = function (msg) {
+            global.console.error(msg);
+        };
+    }
+    else {
+        consoleFunc = function () { };
+    }
+    function getLoggingFunction(provideFallback) {
+        if (provideFallback === void 0) { provideFallback = true; }
+        var tempLogFunc = logErrorFunc;
+        if (!tempLogFunc) {
+            var writeEntry = msPortalFx.Base
+                && msPortalFx.Base.Diagnostics
+                && msPortalFx.Base.Diagnostics.Log
+                && msPortalFx.Base.Diagnostics.Log.writeEntry;
+            if (writeEntry) {
+                var logLevel = 2 /* Error */; // this is enum, can't use the variable check
+                logErrorFunc = function (msg) {
+                    writeEntry(logLevel, bootGetConst, msg);
+                };
+                tempLogFunc = logErrorFunc;
+                if (bufferedLogMessages) {
+                    bufferedLogMessages.forEach(logErrorFunc);
+                    bufferedLogMessages = null;
+                }
+            }
+            else if (provideFallback) {
+                if (!bufferedLogMessages) {
+                    bufferedLogMessages = [];
+                }
+                tempLogFunc = function (msg) {
+                    consoleFunc(msg);
+                    bufferedLogMessages.push(msg);
+                };
+            }
+        }
+        return tempLogFunc;
+    }
+    function logError() {
+        var optionalParams = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            optionalParams[_i - 0] = arguments[_i];
+        }
+        var func = getLoggingFunction();
+        var args = Array.prototype.slice.call(arguments);
+        func(JSON.stringify(args));
+    }
+    function flushLogMessages() {
+        if (bufferedLogMessages && bufferedLogMessages.length > 0) {
+            // flush as side-effect, if Diagnositcs.Log is available
+            getLoggingFunction(false);
+        }
+    }
+    function runScripts() {
+        flushLogMessages();
+        var hasScriptsToLoad = bootScripts.length || (preInitialize && preInitExtensionScripts.length);
+        if (hasReceivedScripts && !currentScript && hasScriptsToLoad) {
+            if (bootScripts.length) {
+                currentScript = bootScripts.shift();
+            }
+            // If extension has specified pre-init scripts, those should be executed before startinitialize.js which is used to tell shell that all necessary
+            // scripts have been loaded and so initialize can be called. So we push the currentScript back and load the preInitExtensionScripts instead.
+            if (preInitExtensionScripts.length
+                && currentScript
+                && currentScript.type === 0 /* Uri */
+                && currentScript.data.toLowerCase().indexOf("startinitialize.js") >= 0) {
+                bootScripts.unshift(currentScript);
+                currentScript = null;
+            }
+            if (!currentScript) {
+                currentScript = preInitExtensionScripts.shift();
+            }
+            var thisScript = Boot.createScriptElement();
+            var doneFunc = function () {
+                thisScript.removeEventListener("load", doneFunc);
+                thisScript.removeEventListener("error", errorFunc);
+                currentScript = null;
+                nextTick(runScripts);
+            };
+            var errorFunc = function (evt) {
+                logError(getScriptErrorLogMessage(currentScript, evt));
+                global.fx.handleError && global.fx.handleError(evt);
+                doneFunc();
+            };
+            thisScript.addEventListener("load", doneFunc, false);
+            thisScript.addEventListener("error", errorFunc, false);
+            switch (currentScript.type) {
+                case 0 /* Uri */:
+                    thisScript.src = currentScript.data;
+                    if (MsPortalFx && MsPortalFx.Base && MsPortalFx.Base.Constants && environment.extensionName !== MsPortalFx.Base.Constants.Shell) {
+                        // When clientOptimizations if off, FxImpl method may not have loaded yet
+                        var addScriptErrorListener = FxImpl
+                            && FxImpl.Diagnostics
+                            && FxImpl.Diagnostics.addScriptErrorListener;
+                        if (addScriptErrorListener) {
+                            // MsPortalFx.Boot.MessageKind.BootError is ok to include here (without a null check)
+                            // because it is declared right in this file and compiles to a constant
+                            addScriptErrorListener(2 /* BootError */, thisScript, thisScript.src);
+                        }
+                    }
+                    break;
+                case 1 /* Text */:
+                    thisScript.text = currentScript.data;
+                    global.setTimeout(function () {
+                        currentScript = null;
+                        runScripts();
+                    }, 0);
+                    break;
+                default:
+                    logError("Unknown ScriptType", currentScript);
+                    break;
+            }
+            document.body.appendChild(thisScript);
+        }
+    }
+    function listener(evt) {
+        if (!isOriginAllowed(evt.origin)) {
+            return;
+        }
+        var newElements;
+        if (evt.data && evt.data.boot === bootReturnConst) {
+            if (evt.data.stopListening) {
+                global.removeEventListener(eventMessageConst, listener);
+                preInitialize = true;
+            }
+            newElements = evt.data.scripts.map(function (item) {
+                return {
+                    type: 0 /* Uri */,
+                    data: item
+                };
+            });
+            // prepend the newElements, same as splice(0, 0, ..newElements.)
+            bootScripts.unshift.apply(bootScripts, newElements);
+            hasReceivedScripts = true;
+            runScripts();
+        }
+    }
+    function loadScript(uris, loadStage) {
+        if (typeof uris === "string") {
+            uris = [uris];
+        }
+        uris.forEach(function (item) {
+            if (loadStage === ScriptLoadStage.PreInitialize) {
+                preInitExtensionScripts.push({ type: 0 /* Uri */, data: item });
+            }
+            else {
+                bootScripts.push({ type: 0 /* Uri */, data: item });
+            }
+        });
+        runScripts();
+    }
+    MsPortalFx.loadScript = loadScript;
+    function loadScriptText(text, loadStage) {
+        if (loadStage === ScriptLoadStage.PreInitialize) {
+            preInitExtensionScripts.push({ type: 1 /* Text */, data: text });
+        }
+        else {
+            bootScripts.push({ type: 1 /* Text */, data: text });
+        }
+        runScripts();
+    }
+    MsPortalFx.loadScriptText = loadScriptText;
+    global.addEventListener(eventMessageConst, listener, false);
+})(MsPortalFx || (MsPortalFx = {}));
+var FxImpl;
+(function (FxImpl) {
+    "use strict";
+    var global = window;
+    var environment = global.fx.environment;
+    var bootGetConst = "BOOTgetScripts;"; // Const must match ExtensionManager.ts of same name.
+    function startBoot() {
+        global.parent.postMessage({
+            boot: bootGetConst,
+            bootVersion: 3,
+            sdkVersion: environment.sdkVersion,
+            extVersion: environment.version
+        }, environment.trustedParentOrigin);
+    }
+    FxImpl.startBoot = startBoot;
+})(FxImpl || (FxImpl = {}))</script>
+</body>
+</html>

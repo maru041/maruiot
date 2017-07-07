@@ -1,0 +1,18 @@
+2017/07/06-22:37:40.472 1557 Reusing MANIFEST /home/pi/.config/chromium/Default/Session Storage/MANIFEST-000001
+2017/07/06-22:37:40.473 1557 Recovering log #13
+2017/07/06-22:37:40.473 1557 Reusing old log /home/pi/.config/chromium/Default/Session Storage/000013.log 
+2017/07/07-00:36:25.062 5079 Level-0 table #16: started
+2017/07/07-00:36:25.109 5079 Level-0 table #16: 22821 bytes OK
+2017/07/07-00:36:25.136 5079 Delete type=0 #13
+2017/07/07-00:46:21.294 5079 Level-0 table #18: started
+2017/07/07-00:46:21.327 5079 Level-0 table #18: 25761 bytes OK
+2017/07/07-00:46:21.356 5079 Delete type=0 #15
+2017/07/07-00:46:21.356 5079 Compacting 4@0 + 1@1 files
+2017/07/07-00:46:21.405 5079 Generated table #19@0: 157 keys, 20720 bytes
+2017/07/07-00:46:21.405 5079 Compacted 4@0 + 1@1 files => 20720 bytes
+2017/07/07-00:46:21.422 5079 compacted to: files[ 0 1 1 0 0 0 0 ]
+2017/07/07-00:46:21.423 5079 Delete type=2 #12
+2017/07/07-00:46:21.426 5079 Delete type=2 #10
+2017/07/07-00:46:21.427 5079 Delete type=2 #8
+2017/07/07-00:46:21.427 5079 Delete type=2 #18
+2017/07/07-00:46:21.427 5079 Delete type=2 #16

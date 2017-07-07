@@ -1,0 +1,1 @@
+HostName=maruIoT.azure-devices.net;DeviceId=maruIoT;SharedAccessKey=uLlftt+66ywpyKJ1H9RNpj+I7bifVqJn8gUKQGOhx1U=
